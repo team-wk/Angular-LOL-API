@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AppService } from './app.service';
+
+import { UsersData } from './usersData';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Angular LOL API';
+  usersData: UsersData[];
+
+  constructor(private appService: AppService) {}
+
+  displayUsers() {
+    this.appService.getUsersData().then((response) => {
+      this.usersData = response;
+    });
+  }
 }
