@@ -10,6 +10,7 @@
   "author": "Lukasz Wozniak",
   "license": "ISC",
   "devDependencies": {
+    "cors": "^2.8.4",
     "express": "^4.16.2",
     "mongoose": "^4.12.3",
     "nodemon": "^1.12.1"

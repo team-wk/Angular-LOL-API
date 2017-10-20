@@ -10,7 +10,7 @@ import { UsersData } from './usersData';
 })
 export class AppComponent {
   title = 'Angular LOL API';
-  usersData: UsersData[];
+  usersData: any;
 
   constructor(private appService: AppService) {}
 

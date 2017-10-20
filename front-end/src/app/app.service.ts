@@ -7,8 +7,7 @@ import { UsersData } from './usersData';
 
 @Injectable()
 export class AppService {
-  // private url = 'https://na1.api.riotgames.com/lol/platform/v3/champions?api_key=' + API_KEY.key;
-  private url = 'https://jsonplaceholder.typicode.com/users';
+  private url = 'http://localhost:4300/tasks';
 
   constructor(private http: HttpClient) {
   }
