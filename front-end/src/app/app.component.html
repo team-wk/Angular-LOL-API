@@ -1,7 +1,13 @@
 <h1>
   {{title}}
 </h1>
-
+<input [(ngModel)]="testNameInput">
 <button (click)="displayUsers()">Get users</button>
 
-{{data}}
+<button (click)="setTestUser()">Test POST</button>
+
+<ul *ngFor="let item of usersData">
+  <li>
+    {{ item?.name }}
+  </li>
+</ul>

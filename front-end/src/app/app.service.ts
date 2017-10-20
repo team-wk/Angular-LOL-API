@@ -12,9 +12,16 @@ export class AppService {
   constructor(private http: HttpClient) {
   }
 
-  getUsersData(): Promise<UsersData[]> {
+  getUsersData(): Promise<any> {
     return this.http.get(this.url).toPromise().then((response) => {
       return response;
     });
+  }
+
+  setUsersData(data: any): Promise<any> {
+    let tmp = {
+      name: data
+    }
+    return this.http.post(this.url, tmp).toPromise()
   }
 }

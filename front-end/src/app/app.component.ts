@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AppService } from './app.service';
-
+import { FormsModule } from '@angular/forms';
 import { UsersData } from './usersData';
 
 @Component({
@@ -10,7 +10,8 @@ import { UsersData } from './usersData';
 })
 export class AppComponent {
   title = 'Angular LOL API';
-  usersData: any;
+  usersData: UsersData[];
+  testNameInput: string;
 
   constructor(private appService: AppService) {}
 
@@ -18,5 +19,9 @@ export class AppComponent {
     this.appService.getUsersData().then((response) => {
       this.usersData = response;
     });
+  }
+
+  setTestUser() {
+    this.appService.setUsersData(this.testNameInput);
   }
 }
