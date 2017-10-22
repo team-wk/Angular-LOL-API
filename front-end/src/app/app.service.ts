@@ -24,4 +24,8 @@ export class AppService {
     }
     return this.http.post(this.url, tmp).toPromise()
   }
+
+  deleteUsersData(id: string): Promise<any> {
+    return this.http.delete(this.url + '/' + id).toPromise()
+  }
 }

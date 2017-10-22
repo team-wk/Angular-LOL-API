@@ -9,5 +9,7 @@
 <ul *ngFor="let item of usersData">
   <li>
     {{ item?.name }}
+    {{ item?._id }}
+    <button (click)="deleteTestUser(item?._id)">DELETE</button>
   </li>
 </ul>

@@ -24,4 +24,8 @@ export class AppComponent {
   setTestUser() {
     this.appService.setUsersData(this.testNameInput);
   }
+
+  deleteTestUser(id: string) {
+    this.appService.deleteUsersData(id);
+  }
 }
