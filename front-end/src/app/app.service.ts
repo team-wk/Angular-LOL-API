@@ -2,30 +2,26 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 
-import { API_KEY } from './API_KEY';
-import { UsersData } from './usersData';
+import { Champion } from './champion';
 
 @Injectable()
 export class AppService {
-  private url = 'http://localhost:4300/tasks';
+  private url = 'http://localhost:4300/champions';
 
   constructor(private http: HttpClient) {
   }
 
-  getUsersData(): Promise<any> {
+  getChampions(): Promise<Champion[]> {
     return this.http.get(this.url).toPromise().then((response) => {
       return response;
     });
   }
 
-  setUsersData(data: any): Promise<any> {
-    let tmp = {
-      name: data
-    }
-    return this.http.post(this.url, tmp).toPromise()
+  setChampion(data: Champion): Promise<any> {
+    return this.http.post(this.url, data).toPromise()
   }
 
-  deleteUsersData(id: string): Promise<any> {
+  deleteChampion(id: string): Promise<any> {
     return this.http.delete(this.url + '/' + id).toPromise()
   }
 }

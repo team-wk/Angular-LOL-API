@@ -1,15 +1,20 @@
 <h1>
   {{title}}
 </h1>
-<input [(ngModel)]="testNameInput">
-<button (click)="displayUsers()">Get users</button>
+<input [(ngModel)]="newChampion.name">
+<input [(ngModel)]="newChampion.desc">
+<input [(ngModel)]="newChampion.tags">
 
-<button (click)="setTestUser()">Test POST</button>
+<button (click)="getChampions()">getChampions</button>
 
-<ul *ngFor="let item of usersData">
+<button (click)="setChampion()">setChampion</button>
+
+<ul *ngFor="let champion of champions">
   <li>
-    {{ item?.name }}
-    {{ item?._id }}
-    <button (click)="deleteTestUser(item?._id)">DELETE</button>
+    {{ champion?._id }}
+    {{ champion?.name }}
+    {{ champion?.desc }}
+    {{ champion?.tags }}
+    <button (click)="deleteChampion(champion?._id)">deleteChampion</button>
   </li>
 </ul>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AppService } from './app.service';
 import { FormsModule } from '@angular/forms';
-import { UsersData } from './usersData';
+import { Champion } from './champion';
 
 @Component({
   selector: 'app-root',
@@ -10,22 +10,24 @@ import { UsersData } from './usersData';
 })
 export class AppComponent {
   title = 'Angular LOL API';
-  usersData: UsersData[];
-  testNameInput: string;
+  champions: Champion[];
+  newChampion: Champion;
 
-  constructor(private appService: AppService) {}
+  constructor(private appService: AppService) {
+    this.newChampion = new Champion();
+  }
 
-  displayUsers() {
-    this.appService.getUsersData().then((response) => {
-      this.usersData = response;
+  getChampions() {
+    this.appService.getChampions().then((response) => {
+      this.champions = response;
     });
   }
 
-  setTestUser() {
-    this.appService.setUsersData(this.testNameInput);
+  setChampion() {
+    this.appService.setChampion(this.newChampion);
   }
 
-  deleteTestUser(id: string) {
-    this.appService.deleteUsersData(id);
+  deleteChampion(id: string) {
+    this.appService.deleteChampion(id);
   }
 }
