@@ -1,15 +1,15 @@
 'use strict';
 module.exports = function(app) {
-  var todoList = require('../controllers/champions.controller');
+  var championsList = require('../controllers/champions.controller');
 
   // todoList Routes
   app.route('/champions')
-    .get(todoList.list_all_champions)
-    .post(todoList.create_a_champion);
+    .get(championsList.list_all_champions)
+    .post(championsList.create_a_champion);
 
 
   app.route('/champions/:championId')
-    .get(todoList.read_a_champion)
-    .put(todoList.update_a_champion)
-    .delete(todoList.delete_a_champion);
+    .get(championsList.read_a_champion)
+    .put(championsList.update_a_champion)
+    .delete(championsList.delete_a_champion);
 };

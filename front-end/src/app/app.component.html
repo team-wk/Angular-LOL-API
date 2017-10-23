@@ -1,13 +1,22 @@
 <h1>
   {{title}}
 </h1>
-<input [(ngModel)]="newChampion.name">
-<input [(ngModel)]="newChampion.desc">
-<input [(ngModel)]="newChampion.tags">
 
-<button (click)="getChampions()">getChampions</button>
+<div>
+  <button (click)="fillChampionsFromJson()">fillChampionsFromJson</button>
+  <button (click)="deleteAllChampions()">deleteAllChampions</button>
+</div>
 
-<button (click)="setChampion()">setChampion</button>
+<div>
+  <input [(ngModel)]="newChampion.name">
+  <input [(ngModel)]="newChampion.desc">
+  <input [(ngModel)]="newChampion.tags">
+</div>
+
+<div>
+  <button (click)="getChampions()">getChampions</button>
+  <button (click)="setChampion()">setChampion</button>
+<div>
 
 <ul *ngFor="let champion of champions">
   <li>
@@ -16,9 +25,6 @@
     {{ champion?.desc }}
     {{ champion?.tags }}
     <button (click)="deleteChampion(champion?._id)">deleteChampion</button>
+    <button (click)="editChampion(champion?._id)">editChampion</button>
   </li>
 </ul>
-
-<button (click)="fillChampionsFromJson()">fillChampionsFromJson</button>
-
-<button (click)="deleteAllChampions()">deleteAllChampions</button>

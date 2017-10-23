@@ -26,8 +26,13 @@ export class AppService {
     return this.http.delete(this.url + '/' + id).toPromise();
   };
 
+  editChampion(id: string, newData: Champion): Promise<any> {
+    // TODO
+    return this.http.put(this.url + '/' + id, newData).toPromise();
+  };
+
   getChampionsJson(): Promise<Champion[]> {
-    return this.http.get("../assets/data/champions.json").toPromise().then((response) => {      
+    return this.http.get("../assets/data/champions.json").toPromise().then((response) => {
       return response;
     });
   };

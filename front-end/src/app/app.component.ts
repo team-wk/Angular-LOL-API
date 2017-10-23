@@ -33,6 +33,10 @@ export class AppComponent {
     this.appService.deleteChampion(id);
   }
 
+  editChampion(id: string) {
+    this.appService.editChampion(id, this.newChampion);
+  }
+
   fillChampionsFromJson() {
     this.appService.getChampionsJson().then((championsFromJson) => {
       championsFromJson.forEach(champion => {
