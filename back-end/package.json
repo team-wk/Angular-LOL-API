@@ -1,14 +1,21 @@
 {
   "name": "angularlolapi",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "author": "Lukasz Wozniak",
+  "license": "ISC",
+  "description": "Backend application in NodeJS + Express + MongoDB",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/team-wk/Angular-LOL-API.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
-  "author": "Lukasz Wozniak",
-  "license": "ISC",
+  "dependencies": {
+
+  },
   "devDependencies": {
     "cors": "^2.8.4",
     "express": "^4.16.2",
