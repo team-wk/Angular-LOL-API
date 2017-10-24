@@ -8,9 +8,9 @@
 </div>
 
 <div>
-  <input [(ngModel)]="newChampion.name">
-  <input [(ngModel)]="newChampion.desc">
-  <input [(ngModel)]="newChampion.tags">
+  <input [(ngModel)]="newChampion.name" placeholder="name">
+  <input [(ngModel)]="newChampion.desc" placeholder="description">
+  <input [(ngModel)]="newChampion.tags" placeholder="tags">
 </div>
 
 <div>
@@ -20,10 +20,10 @@
 
 <ul *ngFor="let champion of champions">
   <li>
-    {{ champion?._id }}
-    {{ champion?.name }}
-    {{ champion?.desc }}
-    {{ champion?.tags }}
+    <div>ID: {{ champion?._id }}</div>
+    <div>NAME: {{ champion?.name }}</div>
+    <div>DESC: {{ champion?.desc }}</div>
+    <div>TAGS: {{ champion?.tags }}</div>
     <button (click)="deleteChampion(champion?._id)">deleteChampion</button>
     <button (click)="editChampion(champion?._id)">editChampion</button>
   </li>

@@ -12,7 +12,7 @@ export class AppService {
   constructor(private http: HttpClient) {
   };
 
-  getChampions(): Promise<Champion[]> {
+  getChampions(): Promise<any> {
     return this.http.get(this.url).toPromise().then((response) => {
       return response;
     });
@@ -31,7 +31,7 @@ export class AppService {
     return this.http.put(this.url + '/' + id, newData).toPromise();
   };
 
-  getChampionsJson(): Promise<Champion[]> {
+  getChampionsJson(): Promise<any> {
     return this.http.get("../assets/data/champions.json").toPromise().then((response) => {
       return response;
     });
