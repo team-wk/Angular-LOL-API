@@ -2,6 +2,11 @@
 Angular playground repository. <br />
 Backend in NodeJS is only for hosting RESTful API.
 
+![Angular](https://yt3.ggpht.com/-S0ggLYoRBu4/AAAAAAAAAAI/AAAAAAAAAAA/rA97wS76eTw/s100-c-k-no-mo-rj-c0xffffff/photo.jpg)
+![TypeScript](http://andrey.moveax.ru/image.axd?picture=logotypes/TypeScript-h100.png)
+![SASS](https://www.dev-metal.com/wp-content/uploads/2014/03/sass-100x100.png)
+![NodeJS](https://s3.amazonaws.com/openshift-hub/production/quickstarts/243/nodejs_custom.png?1456926624)
+
 ## Angular
 ### Installation
 `npm install`
