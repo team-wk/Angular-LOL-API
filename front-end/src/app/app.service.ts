@@ -32,7 +32,7 @@ export class AppService {
   };
 
   getChampionsJson(): Promise<any> {
-    return this.http.get("../assets/data/champions.json").toPromise().then((response) => {
+    return this.http.get("../assets/data/gameinfo-champions.json").toPromise().then((response) => {
       return response;
     });
   };

@@ -6,16 +6,106 @@ var Schema = mongoose.Schema;
 var ChampionSchema = new Schema({
   name: {
     type: String,
-    required: 'Enter the name of the champion'
   },
-  desc: {
+  title: {
     type: String,
-    required: 'Enter the description of the champion'
+  },
+  blurb: {
+    type: String,
+  },
+  info: {
+    type: {
+      attack: {
+        type: Number,
+      },
+      defense: {
+        type: Number,
+      },
+      magic: {
+        type: Number,
+      },
+      difficulty: {
+        type: Number,
+      }
+    }
+  },
+  image: {
+    type: {
+      full: {
+        type: String,
+      }
+    }
   },
   tags: {
     type: String,
-    required: 'Enter the tags of the champion'
   },
+  partype: {
+    type: String,
+  },
+  stats: {
+    type: {
+      hp: {
+        type: Number,
+      },
+      hpperlevel: {
+        type: Number,
+      },
+      mp: {
+        type: Number,
+      },
+      mpperlevel: {
+        type: Number,
+      },
+      movespeed: {
+        type: Number,
+      },
+      armor: {
+        type: Number,
+      },
+      armorperlevel: {
+        type: Number,
+      },
+      spellblock: {
+        type: Number,
+      },
+      spellblockperlevel: {
+        type: Number,
+      },
+      attackrange: {
+        type: Number,
+      },
+      hpregen: {
+        type: Number,
+      },
+      hpregenperlevel: {
+        type: Number,
+      },
+      mpregen: {
+        type: Number,
+      },
+      mpregenperlevel: {
+        type: Number,
+      },
+      crit: {
+        type: Number,
+      },
+      critperlevel: {
+        type: Number,
+      },
+      attackdamage: {
+        type: Number,
+      },
+      attackdamageperlevel: {
+        type: Number,
+      },
+      attackspeedoffset: {
+        type: Number,
+      },
+      attackspeedperlevel: {
+        type: Number,
+      }
+    }
+  }
 });
 
 module.exports = mongoose.model('Champions', ChampionSchema);

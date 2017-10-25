@@ -38,10 +38,13 @@ export class AppComponent {
   }
 
   fillChampionsFromJson() {
+    let champs: Champion[] = [];
     this.appService.getChampionsJson().then((championsFromJson) => {
       championsFromJson.forEach(champion => {
           this.appService.setChampion(champion);
+          champs.push(champion);
       });
+      console.log(champs);
     });
   }
 

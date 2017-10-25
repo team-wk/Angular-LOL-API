@@ -11,7 +11,8 @@ var express = require('express'),
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/lolapi');
-
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(cors({origin: 'http://localhost:4200'}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
