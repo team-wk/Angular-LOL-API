@@ -2,7 +2,8 @@ var express = require('express'),
   app = express(),
   port = process.env.PORT || 4300,
   mongoose = require('mongoose'),
-  Champion = require('./api/models/champions.model'), //created model loading here
+  Champion = require('./api/models/champions.model'),
+  Item = require('./api/models/items.model'),
   bodyParser = require('body-parser');
 
   // Add headers
@@ -17,8 +18,8 @@ app.use(cors({origin: 'http://localhost:4200'}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var routes = require('./api/routes/champions.routes'); //importing route
-routes(app); //register the route
+var routes = require('./api/routes/routes');
+routes(app);
 
 app.listen(port);
 
