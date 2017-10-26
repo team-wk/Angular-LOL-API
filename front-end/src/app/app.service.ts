@@ -24,6 +24,7 @@ export class AppService {
   };
 
   getDataFromJson(): Promise<any> {
+    // TODO: zmiana json
     return this.http.get("../assets/data/gameinfo-champions.json").toPromise().then((response) => {
       return response;
     });
