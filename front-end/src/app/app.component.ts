@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { AppService } from './app.service';
-import { FormsModule } from '@angular/forms';
-import { Champion } from './champion';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -11,48 +9,52 @@ import 'rxjs/add/operator/catch';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Angular LOL API';
-  champions: Champion[];
-  newChampion: Champion;
-
   constructor(private appService: AppService) {
-    this.newChampion = new Champion();
+  }
+  private url = 'http://localhost:4300/';
+
+  restoreChampions() {
+    console.log('CHAMPIONS');
+    this.fillDbFromJson('champions');
   }
 
-  getChampions() {
-    this.appService.getChampions().then((response) => {
-      this.champions = response;
-    });
+  restoreItems() {
+    console.log('items');
+    this.fillDbFromJson('items');
   }
 
-  setChampion() {
-    this.appService.setChampion(this.newChampion);
+  private fillDbFromJson(name: string) {
+    let apiUrl = this.url + name;
+
+    console.log('delete all ' + name + ' from db');
+    this.deleteAllDataFromDb(apiUrl);
+
+    console.log('send data from JSON ' + name + ' to db');
+    this.sendDataFromJsonToDb(apiUrl);
+
+    console.log('get ' + name + ' from db (' + apiUrl + ')');
+    this.logDataFromDb(apiUrl);
   }
 
-  deleteChampion(id: string) {
-    this.appService.deleteChampion(id);
-  }
-
-  editChampion(id: string) {
-    this.appService.editChampion(id, this.newChampion);
-  }
-
-  fillChampionsFromJson() {
-    let champs: Champion[] = [];
-    this.appService.getChampionsJson().then((championsFromJson) => {
-      championsFromJson.forEach(champion => {
-          this.appService.setChampion(champion);
-          champs.push(champion);
-      });
-      console.log(champs);
-    });
-  }
-
-  deleteAllChampions() {
-    this.appService.getChampions().then((champions) => {
-      champions.forEach(champion => {
-          this.appService.deleteChampion(champion._id);
+  private deleteAllDataFromDb(url: string) {
+    this.appService.getData(url).then((response) => {
+      response.forEach(item => {
+          this.appService.deleteData(url, item._id);
       });
     });
-  }
+  };
+
+  private sendDataFromJsonToDb(url: string) {
+    this.appService.getDataFromJson().then((response) => {
+      response.forEach(item => {
+          this.appService.setData(url, item);
+      });
+    });
+  };
+
+  private logDataFromDb(url: string) {
+    this.appService.getData(url).then((response) => {
+      console.log(response);
+    });
+  };
 }
