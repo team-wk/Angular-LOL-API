@@ -12,7 +12,15 @@ var ItemSchema = new Schema({
   },
   plaintext: {
     type: String,
-  }
+  },
+  image: {
+  },
+  gold: {
+  },
+  tags: {
+  },
+  stats: {
+  },
 });
 
 module.exports = mongoose.model('Items', ItemSchema);
