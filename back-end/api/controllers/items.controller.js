@@ -38,7 +38,7 @@ exports.update_a_item = function(req, res) {
 
 exports.delete_a_item = function(req, res) {
   Item.remove({
-    _id: req.params.championId
+    _id: req.params.itemId
   }, function(err, item) {
     if (err)
       res.send(err);
