@@ -23,9 +23,10 @@ export class AppService {
     return this.http.delete(url + '/' + id).toPromise();
   };
 
-  getDataFromJson(): Promise<any> {
-    // TODO: zmiana json
-    return this.http.get("../assets/data/gameinfo-champions.json").toPromise().then((response) => {
+  getDataFromJson(name: string): Promise<any> {
+    let fileName = "../assets/data/gameinfo-" + name + ".json";
+    return this.http.get(fileName).toPromise().then((response) => {
+      console.log('* JSON filename: ' + fileName)
       return response;
     });
   };

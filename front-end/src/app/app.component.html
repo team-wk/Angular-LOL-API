@@ -1,2 +1,14 @@
-<button (click)="restoreChampions()">Restore champions</button>
-<button (click)="restoreItems()">Restore items</button>
+<table>
+  <tr>
+    <th>API</th>
+    <th>Items in JSON</th>
+    <th>Items in DB</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let item of apiSpec">
+    <td>{{item.key}}</td>
+    <td>{{item.jsonItems}}</td>
+    <td>{{item.dbItems}}</td>
+    <td><button (click)="restoreDb(item.key)">Restore {{item.key}}</button></td>
+  </tr>
+</table>

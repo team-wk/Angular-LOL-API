@@ -9,31 +9,44 @@ import 'rxjs/add/operator/catch';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private appService: AppService) {
-  }
   private url = 'http://localhost:4300/';
 
-  restoreChampions() {
-    console.log('CHAMPIONS');
-    this.fillDbFromJson('champions');
+  apiSpec: {
+    key: string,
+    jsonItems: number,
+    dbItems: number
+  }[] = [
+    {key: 'champions', jsonItems: 0, dbItems: 0},
+    {key: 'items', jsonItems: 0, dbItems: 0}
+  ];
+
+  constructor(private appService: AppService) {
+    this.apiSpec.forEach((item) => {
+      this.appService.getDataFromJson(item.key).then((response) => {
+        item.jsonItems = response.length;
+      });
+    });
+
+    this.apiSpec.forEach((item) => {
+      this.appService.getData(this.url + item.key).then((response) => {
+        item.dbItems = response.length;
+      });
+    });
   }
 
-  restoreItems() {
-    console.log('items');
-    this.fillDbFromJson('items');
+  restoreDb(key: string) {
+    console.log('*** ' + key);
+    this.fillDbFromJson(key);
   }
 
   private fillDbFromJson(name: string) {
     let apiUrl = this.url + name;
 
-    console.log('delete all ' + name + ' from db');
+    console.log('* Delete all ' + name + ' from db');
     this.deleteAllDataFromDb(apiUrl);
 
-    console.log('send data from JSON ' + name + ' to db');
-    this.sendDataFromJsonToDb(apiUrl);
-
-    console.log('get ' + name + ' from db (' + apiUrl + ')');
-    this.logDataFromDb(apiUrl);
+    console.log('* Send data from JSON ' + name + ' to db');
+    this.sendDataFromJsonToDb(apiUrl, name);
   }
 
   private deleteAllDataFromDb(url: string) {
@@ -44,11 +57,13 @@ export class AppComponent {
     });
   };
 
-  private sendDataFromJsonToDb(url: string) {
-    this.appService.getDataFromJson().then((response) => {
+  private sendDataFromJsonToDb(url: string, name: string) {
+    this.appService.getDataFromJson(name).then((response) => {
       response.forEach(item => {
           this.appService.setData(url, item);
       });
+
+      this.logDataFromDb(url);
     });
   };
 
