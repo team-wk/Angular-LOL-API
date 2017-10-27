@@ -1,38 +1,44 @@
 # Angular LOL API
 Angular playground repository. <br />
-Backend in NodeJS is only for hosting RESTful API.
-
-![Angular](https://yt3.ggpht.com/-S0ggLYoRBu4/AAAAAAAAAAI/AAAAAAAAAAA/rA97wS76eTw/s100-c-k-no-mo-rj-c0xffffff/photo.jpg)
-![TypeScript](http://andrey.moveax.ru/image.axd?picture=logotypes/TypeScript-h100.png)
-![SASS](https://www.dev-metal.com/wp-content/uploads/2014/03/sass-100x100.png)
-![NodeJS](https://s3.amazonaws.com/openshift-hub/production/quickstarts/243/nodejs_custom.png?1456926624)
+Back-end in NodeJS + MongoDB + ExpressJS is only for hosting RESTful API.
 
 ## Angular
 ### Installation
-`npm install`
+In `front-end` directory: `npm install`
 
 ### Run
-`ng serve`
+In `front-end` directory: `ng serve`
 
 ### Host
 http://localhost:4200/
 
 ## NodeJS server
 ### Installation
-`npm install --only=dev`
+In `back-end` directory: `npm install --only=dev`
 
 ### Run
 `mongod`  <br />
-`npm run start`
+In `back-end` directory: `npm run start`
 
 ### RESTful API
 * http://localhost:4300/champions
 * http://localhost:4300/champions/:championId
+* http://localhost:4300/items
+* http://localhost:4300/items/:itemId
+
+## Planned API
+* http://localhost:4300/masteries
+* http://localhost:4300/masteries/:masteryId
+* http://localhost:4300/runes
+* http://localhost:4300/runes/:runeId
+* http://localhost:4300/summonerspells
+* http://localhost:4300/summonerspells/:summonerspellId
 
 ## Reference
 ### Front-end
 * https://angular.io/
 * https://material.angular.io/
+* https://sass-guidelin.es/#architecture
 
 ### Back-end
 * https://nodejs.org/en/

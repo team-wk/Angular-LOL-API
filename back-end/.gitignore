@@ -27,3 +27,4 @@
 # System Files
 .DS_Store
 Thumbs.db
+npm-debug.log
