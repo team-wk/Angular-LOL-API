@@ -4,6 +4,7 @@ var express = require('express'),
   mongoose = require('mongoose'),
   Champion = require('./api/models/champions.model'),
   Item = require('./api/models/items.model'),
+  Mastery = require('./api/models/masteries.model'),
   bodyParser = require('body-parser');
 
   // Add headers

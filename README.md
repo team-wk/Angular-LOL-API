@@ -25,10 +25,10 @@ In `back-end` directory: `npm run start`
 * http://localhost:4300/champions/:championId
 * http://localhost:4300/items
 * http://localhost:4300/items/:itemId
-
-## Planned API
 * http://localhost:4300/masteries
 * http://localhost:4300/masteries/:masteryId
+
+## Planned API
 * http://localhost:4300/runes
 * http://localhost:4300/runes/:runeId
 * http://localhost:4300/summonerspells

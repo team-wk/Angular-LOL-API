@@ -17,7 +17,8 @@ export class AppComponent {
     dbItems: number
   }[] = [
     {key: 'champions', jsonItems: 0, dbItems: 0},
-    {key: 'items', jsonItems: 0, dbItems: 0}
+    {key: 'items', jsonItems: 0, dbItems: 0},
+    {key: 'masteries', jsonItems: 0, dbItems: 0}
   ];
 
   constructor(private appService: AppService) {
