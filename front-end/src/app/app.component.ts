@@ -21,6 +21,10 @@ export class AppComponent {
   ];
 
   constructor(private appService: AppService) {
+
+  }
+
+  getItemsInfo() {
     this.apiSpec.forEach((item) => {
       this.appService.getDataFromJson(item.key).then((response) => {
         item.jsonItems = response.length;
