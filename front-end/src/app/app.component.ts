@@ -10,6 +10,7 @@ import 'rxjs/add/operator/catch';
 })
 export class AppComponent {
   private url = 'http://localhost:4300/';
+  showProgressBar = false;
 
   apiSpec: {
     key: string,
@@ -26,6 +27,7 @@ export class AppComponent {
   }
 
   getItemsInfo() {
+    this.showProgressBar = true;
     this.apiSpec.forEach((item) => {
       this.appService.getDataFromJson(item.key).then((response) => {
         item.jsonItems = response.length;
@@ -35,11 +37,13 @@ export class AppComponent {
     this.apiSpec.forEach((item) => {
       this.appService.getData(this.url + item.key).then((response) => {
         item.dbItems = response.length;
+        this.showProgressBar = false;
       });
     });
   }
 
   restoreDb(key: string) {
+    this.showProgressBar = true;
     console.log('*** ' + key);
     this.fillDbFromJson(key);
   }
@@ -75,6 +79,7 @@ export class AppComponent {
   private logDataFromDb(url: string) {
     this.appService.getData(url).then((response) => {
       console.log(response);
+      this.showProgressBar = false;
     });
   };
 }

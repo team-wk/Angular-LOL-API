@@ -14,7 +14,7 @@
       </mat-grid-tile>
     </ng-container>
     <mat-grid-tile [colspan]="3">
-      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      <mat-progress-bar *ngIf="showProgressBar" mode="indeterminate"></mat-progress-bar>
     </mat-grid-tile>
     <mat-grid-tile>
       <button mat-raised-button color="primary" (click)="getItemsInfo()">Get items info</button>
