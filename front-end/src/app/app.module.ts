@@ -7,7 +7,8 @@ import { MatButtonModule,
   MatCardModule,
   MatProgressBarModule,
   MatGridListModule,
-  MatToolbarModule } from '@angular/material';
+  MatToolbarModule,
+  MatIconModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/helloworld.component';
@@ -43,6 +44,7 @@ import { DbmanagementService } from './dbmanagement/dbmanagement.service';
     MatProgressBarModule,
     MatGridListModule,
     MatToolbarModule,
+    MatIconModule,
     BrowserAnimationsModule
   ],
   providers: [
