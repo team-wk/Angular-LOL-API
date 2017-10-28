@@ -3,10 +3,18 @@
 
 body {
   background: #f5f5f5;
+
+  header {}
+
+  section {
+    button {
+      width: 80%;
+    }
+  }
 }
 
-button {
-  width: 80%;
+mat-card {
+  margin-bottom: 16px;
 }
 
 .bold-font {

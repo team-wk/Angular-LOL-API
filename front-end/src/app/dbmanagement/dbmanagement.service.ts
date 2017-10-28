@@ -4,7 +4,7 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/catch';
 
 @Injectable()
-export class AppService {
+export class DbmanagementService {
 
   constructor(private http: HttpClient) {
   };
