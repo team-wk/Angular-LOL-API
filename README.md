@@ -10,7 +10,8 @@ In `front-end` directory: `npm install`
 In `front-end` directory: `ng serve`
 
 ### Host
-http://localhost:4200/
+Front-end app: http://localhost:4200/ <br />
+Dbmanagement: http://localhost:4250/
 
 ## NodeJS server
 ### Installation

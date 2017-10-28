@@ -15,7 +15,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/lolapi');
 app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
-app.use(cors({origin: 'http://localhost:4200'}));
+app.use(cors({origin: ['http://localhost:4200', 'http://localhost:4250']}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
