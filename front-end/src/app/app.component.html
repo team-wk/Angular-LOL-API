@@ -1,15 +1,23 @@
-<table>
-  <tr>
-    <th>API</th>
-    <th>Items in JSON</th>
-    <th>Items in DB</th>
-    <th>Actions</th>
-  </tr>
-  <tr *ngFor="let item of apiSpec">
-    <td>{{item.key}}</td>
-    <td>{{item.jsonItems}}</td>
-    <td>{{item.dbItems}}</td>
-    <td><button (click)="restoreDb(item.key)">Restore {{item.key}}</button></td>
-  </tr>
-</table>
-<button (click)="getItemsInfo()">Get items info</button>
+<mat-card>
+  <mat-toolbar color="primary">DB management</mat-toolbar>
+  <mat-grid-list cols="4" rowHeight="50">
+    <mat-grid-tile class="bold-font">API</mat-grid-tile>
+    <mat-grid-tile class="bold-font">Items in JSON</mat-grid-tile>
+    <mat-grid-tile class="bold-font">Items in DB</mat-grid-tile>
+    <mat-grid-tile class="bold-font">Actions</mat-grid-tile>
+    <ng-container *ngFor="let item of apiSpec">
+      <mat-grid-tile>{{item.key}}</mat-grid-tile>
+      <mat-grid-tile>{{item.jsonItems}}</mat-grid-tile>
+      <mat-grid-tile>{{item.dbItems}}</mat-grid-tile>
+      <mat-grid-tile>
+        <button mat-raised-button color="warn" (click)="restoreDb(item.key)">Restore {{item.key}}</button>
+      </mat-grid-tile>
+    </ng-container>
+    <mat-grid-tile [colspan]="3">
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <button mat-raised-button color="primary" (click)="getItemsInfo()">Get items info</button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>
