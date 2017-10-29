@@ -1,0 +1,28 @@
+<ul>
+  <li *ngFor="let item of array">{{item}}</li>
+</ul>
+<hr>
+
+<p *ngIf="isShow">qweqw</p>
+<hr>
+
+<button (click)="isShow=!isShow">ukrywanie</button>
+<hr>
+
+<h1 (click)="changeTitle()">{{title}}</h1>
+<hr>
+
+<ul [class.red-font]="kliknietaLiczba===5">
+  <li  *ngFor="let item of array" (click)="kliknalemNa(item)">{{item}}</li>
+</ul>
+
+<p>kliknąłeś: {{kliknietaLiczba}}</p>
+
+<hr>
+<ul>
+  <li *ngFor="let item of array2; let i = index">{{item}} <button (click)="delete(i)">-</button></li>
+</ul>
+<button (click)="add()">+</button>
+<button (click)="addFromInput()">addFromInput</button>
+<input [(ngModel)]="textFromInput"/>
+<hr>
