@@ -1,4 +1,5 @@
-<button (click)="getChampions()">Get</button>
+<button (click)='getChampions()'>Get</button>
 <ul>
-  <li *ngFor="let champion of champions">{{champion?.name}}</li>
+  <li *ngFor='let champion of champions; let i = index'><img src={{championsImagesSrc[i]}}>{{champion.name}}</li>
+
 </ul>

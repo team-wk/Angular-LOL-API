@@ -13,14 +13,16 @@
 <hr>
 
 <ul [class.red-font]="kliknietaLiczba===5">
-  <li  *ngFor="let item of array" (click)="kliknalemNa(item)">{{item}}</li>
+  <li *ngFor="let item of array" (click)="kliknalemNa(item)">{{item}}</li>
 </ul>
 
 <p>kliknąłeś: {{kliknietaLiczba}}</p>
 
 <hr>
 <ul>
-  <li *ngFor="let item of array2; let i = index">{{item}} <button (click)="delete(i)">-</button></li>
+  <li *ngFor="let item of array2; let i = index">{{item}}
+    <button (click)="delete(i)">-</button>
+  </li>
 </ul>
 <button (click)="add()">+</button>
 <button (click)="addFromInput()">addFromInput</button>
