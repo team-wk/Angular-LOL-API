@@ -18,6 +18,7 @@ export class ChampionsComponent implements OnInit {
     this.getChampions();
   }
 
+  // TODO: pomyslalem, ze lepiej nie tworzyc osobnej zmiennej championsImagesSrc. Przerob kod, zeby podczas przypisywania danych z API do champions odpowiednio podmienial image.full.
   getChampions() {
     this.championsService.getChampions().then((champions) => {
       this.champions = champions;

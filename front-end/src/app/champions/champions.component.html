@@ -1,5 +1,6 @@
 <button (click)='getChampions()'>Get</button>
 <ul>
+  <!-- TODO: po zmianach w ts, uzyjmy tutaj wylacznie zmiennej champions (championsImagesSrc do wywalenia) -->
   <li *ngFor='let champion of champions; let i = index'><img src={{championsImagesSrc[i]}}>{{champion.name}}</li>
 
 </ul>

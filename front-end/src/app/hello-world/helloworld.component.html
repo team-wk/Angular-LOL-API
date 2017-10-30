@@ -12,6 +12,7 @@
 <h1 (click)="changeTitle()">{{title}}</h1>
 <hr>
 
+<!-- TODO: po naszym refaktorze, class.red-font nie dziala - napraw, zeby bylo tak, jak robilismy :) -->
 <ul [class.red-font]="kliknietaLiczba===5">
   <li *ngFor="let item of array" (click)="kliknalemNa(item)">{{item}}</li>
 </ul>
