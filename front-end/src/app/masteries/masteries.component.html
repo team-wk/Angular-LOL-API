@@ -1,0 +1,16 @@
+<ul>
+  <li *ngFor="let mastery of masteries">
+    <div>
+      {{mastery.name}}
+    </div>
+    <div>
+      {{mastery.ranks}}
+    </div>
+    <div>
+      {{mastery.description}}
+    </div>
+    <div>
+      <img src={{mastery.image.full}}>
+    </div>
+  </li>
+</ul>

@@ -6,7 +6,9 @@ import {AppComponent} from './app.component';
 import {RouterModule} from '@angular/router';
 import {HelloWorldComponent} from './hello-world/helloworld.component';
 import {ChampionsComponent} from './champions/champions.component';
+import {MasteriesComponent} from './masteries/masteries.component';
 import {ChampionsService} from './champions/champions.service';
+import {MasteriesService} from './masteries/masteries.service';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule} from "@angular/material";
@@ -16,7 +18,8 @@ import {MatButtonModule} from "@angular/material";
   declarations: [
     AppComponent,
     HelloWorldComponent,
-    ChampionsComponent
+    ChampionsComponent,
+    MasteriesComponent
   ],
   imports: [RouterModule.forRoot([
     {
@@ -31,6 +34,10 @@ import {MatButtonModule} from "@angular/material";
     {
       path: 'champions',
       component: ChampionsComponent
+    },
+    {
+      path: 'masteries',
+      component: MasteriesComponent
     }
   ]),
     BrowserModule,
@@ -40,7 +47,10 @@ import {MatButtonModule} from "@angular/material";
     MatButtonModule
   ],
   // serwisy
-  providers: [ChampionsService],
+  providers: [
+    ChampionsService,
+    MasteriesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
