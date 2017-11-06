@@ -11,7 +11,8 @@ import {ChampionsService} from './champions/champions.service';
 import {MasteriesService} from './masteries/masteries.service';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCardModule, MatExpansionModule, MatGridListModule, MatListModule, MatToolbarModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatExpansionModule, MatGridListModule, MatListModule, MatToolbarModule, MatDialogModule} from '@angular/material';
+import {MasteryComponent} from './masteries/mastery/mastery.component';
 
 @NgModule({
   // komponenty
@@ -19,7 +20,8 @@ import {MatButtonModule, MatCardModule, MatExpansionModule, MatGridListModule, M
     AppComponent,
     HelloWorldComponent,
     ChampionsComponent,
-    MasteriesComponent
+    MasteriesComponent,
+    MasteryComponent
   ],
   imports: [RouterModule.forRoot([
     {
@@ -49,13 +51,15 @@ import {MatButtonModule, MatCardModule, MatExpansionModule, MatGridListModule, M
     MatExpansionModule,
     MatListModule,
     MatGridListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatDialogModule
   ],
   // serwisy
   providers: [
     ChampionsService,
     MasteriesService
   ],
+  entryComponents: [MasteryComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

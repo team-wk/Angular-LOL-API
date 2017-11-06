@@ -13,4 +13,10 @@ export class MasteriesService {
       return response;
     });
   }
+
+  getMastery(id: string): Promise<any> {
+    return this.http.get(this.url + '/' + id).toPromise().then((response) => {
+      return response;
+    });
+  }
 }

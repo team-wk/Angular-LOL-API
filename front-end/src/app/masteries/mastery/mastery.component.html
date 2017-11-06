@@ -1,0 +1,9 @@
+<!--TODO: view-->
+<mat-toolbar>
+  <h1>{{mastery?.name}}</h1>
+</mat-toolbar>
+<img src={{mastery?.image.full}}>
+<p>Rank: {{mastery?.ranks}}</p>
+<p>{{mastery?.description}}</p>
+
+<button (click)="closeDialog()">close</button>

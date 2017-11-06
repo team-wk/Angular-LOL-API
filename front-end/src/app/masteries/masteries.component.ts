@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {MasteriesService} from './masteries.service';
 import {Mastery} from './mastery';
+import {MatDialog} from '@angular/material';
+import {MasteryComponent} from './mastery/mastery.component';
 
 @Component({
   selector: 'masteries',
@@ -12,7 +14,7 @@ export class MasteriesComponent implements OnInit {
   masteries: Mastery[];
   private imgPath = 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/mastery/';
 
-  constructor(private masteriesService: MasteriesService) {
+  constructor(private masteriesService: MasteriesService, public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -23,6 +25,12 @@ export class MasteriesComponent implements OnInit {
     this.masteriesService.getMasteries().then((masteries) => {
       this.masteries = masteries;
       this.setImgPath();
+    });
+  }
+
+  openMasteryDetails(masteryId) {
+    this.dialog.open(MasteryComponent, {
+      data: masteryId
     });
   }
 
