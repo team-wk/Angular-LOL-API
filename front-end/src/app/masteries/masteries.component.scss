@@ -2,19 +2,36 @@ mat-card {
   max-width: 700px;
   margin: 0 auto;
 
-  mat-panel-title {
-    min-width: 55%;
-  }
+  mat-list-item {
+    height: 64px;
+    padding: 8px 0;
 
-  .content-wr {
-    .img-wr,
-    .text-wr {
-      display: inline-block;
-      float: left;
+    &:nth-of-type(even) {
+      background: rgba(245, 245, 245, 0.5);
     }
 
-    .img-wr {
+    /deep/ .mat-list-item-content {
+      height: 64px;
+    }
 
+    .item-wr {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      .item--image {
+        width: 64px;
+        margin-right: 16px;
+      }
+
+      .item--text {
+        text-align: left;
+        width: 100%;
+      }
+
+      .item--options {
+      }
     }
   }
 }

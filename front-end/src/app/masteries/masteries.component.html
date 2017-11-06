@@ -1,22 +1,20 @@
 <mat-card>
-
-  <mat-expansion-panel *ngFor="let mastery of masteries">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        {{mastery.name}}
-      </mat-panel-title>
-      <mat-panel-description>
-        Rank: {{mastery.ranks}}
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-
-    <div class="content-wr">
-      <div class="img-wr">
-        <img src={{mastery.image.full}}>
+  <mat-list>
+    <mat-toolbar>
+      <h1>Masteries</h1>
+    </mat-toolbar>
+    <mat-list-item *ngFor="let mastery of masteries">
+      <div class="item-wr">
+        <div class="item--image">
+          <img src={{mastery.image.full}}>
+        </div>
+        <div class="item--text">
+          {{mastery.name}}
+        </div>
+        <div class="item--options">
+          a
+        </div>
       </div>
-      <p class="text-wr">
-        {{mastery.description}}
-      </p>
-    </div>
-  </mat-expansion-panel>
+    </mat-list-item>
+  </mat-list>
 </mat-card>

@@ -11,7 +11,7 @@ import {ChampionsService} from './champions/champions.service';
 import {MasteriesService} from './masteries/masteries.service';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCardModule, MatExpansionModule} from "@angular/material";
+import {MatButtonModule, MatCardModule, MatExpansionModule, MatGridListModule, MatListModule, MatToolbarModule} from '@angular/material';
 
 @NgModule({
   // komponenty
@@ -46,7 +46,10 @@ import {MatButtonModule, MatCardModule, MatExpansionModule} from "@angular/mater
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatListModule,
+    MatGridListModule,
+    MatToolbarModule
   ],
   // serwisy
   providers: [
