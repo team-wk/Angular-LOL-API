@@ -4,7 +4,8 @@ import {Mastery} from './mastery';
 
 @Component({
   selector: 'masteries',
-  templateUrl: './masteries.component.html'
+  templateUrl: './masteries.component.html',
+  styleUrls: ['./masteries.component.scss']
 })
 
 export class MasteriesComponent implements OnInit {

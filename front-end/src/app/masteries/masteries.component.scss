@@ -1,0 +1,20 @@
+mat-card {
+  max-width: 700px;
+  margin: 0 auto;
+
+  mat-panel-title {
+    min-width: 55%;
+  }
+
+  .content-wr {
+    .img-wr,
+    .text-wr {
+      display: inline-block;
+      float: left;
+    }
+
+    .img-wr {
+
+    }
+  }
+}
