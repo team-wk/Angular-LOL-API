@@ -11,14 +11,12 @@ export class MasteriesService {
 
   getMasteries(): Promise<any> {
     return this.http.get(this.url).toPromise().then((response) => {
-      this.alert.showAlert('Masteries successfully get.');
       return response;
     });
   }
 
   getMastery(id: string): Promise<any> {
     return this.http.get(this.url + '/' + id).toPromise().then((response) => {
-      this.alert.showAlert('Mastery [' + id +  '] successfully get.');
       return response;
     });
   }

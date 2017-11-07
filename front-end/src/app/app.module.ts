@@ -11,7 +11,7 @@ import {ChampionsService} from './champions/champions.service';
 import {MasteriesService} from './masteries/masteries.service';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCardModule, MatExpansionModule, MatGridListModule, MatListModule, MatToolbarModule, MatDialogModule, MatSnackBarModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatExpansionModule, MatGridListModule, MatListModule, MatToolbarModule, MatDialogModule, MatSnackBarModule, MatTooltipModule} from '@angular/material';
 import {MasteryComponent} from './masteries/mastery/mastery.component';
 import {Alert} from './alert/alert';
 
@@ -54,7 +54,8 @@ import {Alert} from './alert/alert';
     MatGridListModule,
     MatToolbarModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTooltipModule
   ],
   // serwisy
   providers: [

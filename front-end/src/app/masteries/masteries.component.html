@@ -11,8 +11,8 @@
         <div class="item--text">
           {{mastery.name}}
         </div>
-        <div class="item--options" (click)="openMasteryDetails(mastery._id)">
-          details
+        <div class="item--options">
+          <i (click)="openMasteryDetails(mastery._id)" class="material-icons" matTooltip="{{mastery.name}} details">info_outline</i>
         </div>
       </div>
     </mat-list-item>

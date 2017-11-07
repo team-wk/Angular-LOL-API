@@ -6,5 +6,5 @@
 <p>Rank: {{mastery?.ranks}}</p>
 <p>{{mastery?.description}}</p>
 
-<button (click)="deleteMastery(mastery?._id)">delete</button>
-<button (click)="closeDialog()">close</button>
+<i (click)="deleteMastery(mastery?._id)" class="material-icons" matTooltip="Delete">delete</i>
+<i (click)="closeDialog()" class="material-icons" matTooltip="Close details">clear</i>
