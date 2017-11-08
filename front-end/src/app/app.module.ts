@@ -14,6 +14,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCardModule, MatExpansionModule, MatGridListModule, MatListModule, MatToolbarModule, MatDialogModule, MatSnackBarModule, MatTooltipModule} from '@angular/material';
 import {MasteryComponent} from './masteries/mastery/mastery.component';
 import {Alert} from './alert/alert';
+import {ConfirmDialogComponent} from './confirm-dialog-component/confirm-dialog.component';
 
 @NgModule({
   // komponenty
@@ -22,7 +23,8 @@ import {Alert} from './alert/alert';
     HelloWorldComponent,
     ChampionsComponent,
     MasteriesComponent,
-    MasteryComponent
+    MasteryComponent,
+    ConfirmDialogComponent
   ],
   imports: [RouterModule.forRoot([
     {
@@ -63,7 +65,7 @@ import {Alert} from './alert/alert';
     MasteriesService,
     Alert
   ],
-  entryComponents: [MasteryComponent],
+  entryComponents: [MasteryComponent, ConfirmDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {
